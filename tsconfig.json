@@ -37,15 +37,6 @@
       "esnext",
     ],
 
-    "paths": {
-      "@prosopo/procaptcha": [
-        "../procaptcha/src"
-      ],
-      "@prosopo/procaptcha/*": [
-        "../procaptcha/src/*"
-      ]
-    },
-
     "rootDirs": ["./src"],
     "outDir": "./build"
 
@@ -53,11 +44,5 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"
-  ],
-  "references": [
-    {
-      "path": "../procaptcha",
-      "name": "@prosopo/procaptcha"
-    }
   ]
 }
