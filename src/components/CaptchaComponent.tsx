@@ -34,9 +34,12 @@ export function CaptchaComponent({ clientInterface }: { clientInterface: Prosopo
 
     const manager: ICaptchaContextReducer = useContext(CaptchaContextManager);
     const [state, update] = useReducer(captchaStateReducer, { captchaIndex: 0, captchaSolution: [] });
-    const { account, contractAddress } = manager.state;
+    const { account } = manager.state;
+    const contractAddress = manager.state.config.prosopoContractAccount;
     const { captchaChallenge, captchaIndex, captchaSolution } = state;
     const totalCaptchas = captchaChallenge?.captchas.length ?? 0;
+
+    console.log("contractAddress", contractAddress);
 
     const stateClientInterface = new ProsopoCaptchaStateClient(clientInterface, { state, update });
 
